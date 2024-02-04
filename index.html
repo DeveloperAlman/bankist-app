@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/png" href="/icon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Bankist</title>
+</head>
+
+<body>
+  <!-- TOP NAVIGATION -->
+  <nav>
+    <p class="welcome">Log in to get started</p>
+    <img src="logo.png" alt="Logo" class="logo" />
+    <form class="login">
+      <input type="text" placeholder="user" class="login__input login__input--user" />
+      <!-- In practice, use type="password" -->
+      <input type="text" placeholder="PIN" maxlength="4" class="login__input login__input--pin" />
+      <button class="login__btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+        </svg>
+      </button>
+    </form>
+  </nav>
+
+  <main class="app">
+    <!-- BALANCE -->
+    <div class="balance">
+      <div>
+        <p class="balance__label">Current balance</p>
+        <p class="balance__date">
+          As of <span class="date">05/03/2037</span>
+        </p>
+      </div>
+      <p class="balance__value">0000€</p>
+    </div>
+
+    <!-- MOVEMENTS -->
+    <div class="movements">
+      <div class="movements__row">
+        <div class="movements__type movements__type--deposit">2 deposit</div>
+        <div class="movements__date">3 days ago</div>
+        <div class="movements__value">4 000€</div>
+      </div>
+      <div class="movements__row">
+        <div class="movements__type movements__type--withdrawal">
+          1 withdrawal
+        </div>
+        <div class="movements__date">24/01/2037</div>
+        <div class="movements__value">-378€</div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-wrapper">
+      <div class="summary">
+        <p class="summary__label">In</p>
+        <p class="summary__value summary__value--in">0000Pi</p>
+        <p class="summary__label">Out</p>
+        <p class="summary__value summary__value--out">0000Pi</p>
+        <p class="summary__label">Interest</p>
+        <p class="summary__value summary__value--interest">0000Pi</p>
+        <button class="btn--sort">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 320 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z" />
+          </svg>
+          SORT
+        </button>
+      </div>
+    </div>
+
+    <!-- OPERATION: TRANSFERS -->
+    <div class="operation operation--transfer">
+      <h2>Transfer Pi coins</h2>
+      <form class="form form--transfer">
+        <input type="text" class="form__input form__input--to" />
+        <input type="number" class="form__input form__input--amount" />
+        <button class="form__btn form__btn--transfer">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+          </svg>
+        </button>
+        <label class="form__label form-check-account">Transfer to</label>
+        <label class="form__label">Amount</label>
+      </form>
+    </div>
+
+    <!-- OPERATION: LOAN -->
+    <div class="operation operation--loan">
+      <h2>Request Pi coins</h2>
+      <form class="form form--loan">
+        <input type="number" class="form__input form__input--loan-amount" />
+        <button class="form__btn form__btn--loan">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+          </svg>
+        </button>
+        <label class="form__label form__label--loan">Amount</label>
+      </form>
+    </div>
+
+    <!-- OPERATION: CLOSE -->
+    <div class="operation operation--close">
+      <h2>Close account</h2>
+      <form class="form form--close">
+        <input type="text" class="form__input form__input--user" />
+        <input type="password" maxlength="6" class="form__input form__input--pin" />
+        <button class="form__btn form__btn--close">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+          </svg>
+        </button>
+        <label class="form__label">Confirm user</label>
+        <label class="form__label">Confirm PIN</label>
+      </form>
+    </div>
+
+    <p class="logout-timer">
+      You will be logged out in <span class="timer">10:00</span>
+    </p>
+  </main>
+
+  <footer>
+    &copy; Designed by Jonas Schmedtmann. Developed by Alman Nazyrov.
+  </footer>
+
+  <script src="https://kit.fontawesome.com/7d02461f83.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
